@@ -23,18 +23,17 @@ class AccessControl {
     const userIsActive = user.isActive;
     const userRoleMatchesResource = user.role === resource.requiredRole;
     const userIsNotBanned = !user.flags.includes("banned");
-    const userHasLoggedInRecently = (new Date().getTime() - user.lastLogin.getTime()) > THIRTY_DAYS_IN_MS;
+    const userHasLoggedInRecently = (new Date().getTime() - user.lastLogin.getTime()) < THIRTY_DAYS_IN_MS;
     const userIsNotInRestrictedCountry = !resource.restrictedCountries.includes(user.country);
-    const userIsInAllowedTimeRange = currentHour >= resource.allowedHours[0] && currentHour < resource.allowedHours[1];
-    const userIsNotRestrictedTimeAccess = !user.flags.includes("restricted_time_access");
+    const userIsInAllowedTimeRange = !user.flags.includes("restricted_time_access") || (currentHour >= resource.allowedHours[0] && currentHour < resource.allowedHours[1]);
+
     if (
       !userIsActive ||
       !userRoleMatchesResource ||
       !userIsNotBanned ||
       !userHasLoggedInRecently ||
       !userIsNotInRestrictedCountry ||
-      !userIsInAllowedTimeRange ||
-      !userIsNotRestrictedTimeAccess
+      !userIsInAllowedTimeRange
     ) {
       console.log("Access denied");
       return false;

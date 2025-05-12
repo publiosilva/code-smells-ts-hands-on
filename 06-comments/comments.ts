@@ -32,8 +32,7 @@ class AccessControl {
       user.flags.includes("banned") ||
       (new Date().getTime() - user.lastLogin.getTime()) > 30 * 24 * 60 * 60 * 1000 || // 30 days in ms
       resource.restrictedCountries.includes(user.country) ||
-      currentHour < resource.allowedHours[0] || currentHour >= resource.allowedHours[1] ||
-      user.flags.includes("restricted_time_access")
+      (user.flags.includes("restricted_time_access") && (currentHour < resource.allowedHours[0] || currentHour >= resource.allowedHours[1]))
     ) {
       console.log("Access denied");
       return false;
