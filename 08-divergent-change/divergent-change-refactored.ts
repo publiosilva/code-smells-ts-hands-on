@@ -1,3 +1,7 @@
+// CÓDIGO REFATORADO: REMOÇÃO DO DIVERGENT CHANGE
+// Para resolver o problema, dividimos a classe ProductManager em classes menores, cada uma com uma única responsabilidade.
+// Agora, ProductRepository lida com persistência, ProductRenderer com renderização e ShippingCalculator com cálculo de frete.
+// Isso facilita a manutenção, pois mudanças em uma responsabilidade não afetam outras.
 class ProductRepository {
   findById(id: number): Product | null {
     // Data access logic

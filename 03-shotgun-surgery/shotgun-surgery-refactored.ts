@@ -1,3 +1,7 @@
+// CÓDIGO REFATORADO: REMOÇÃO DO SHOTGUN SURGERY
+// Para resolver o problema de Shotgun Surgery, encapsulamos a lógica de formatação e exibição de dados dentro da própria classe Customer.
+// Agora, se uma nova propriedade for adicionada, basta alterar apenas a classe Customer.
+// CustomerService e CustomerComponent passam a depender dos métodos da Customer, reduzindo a necessidade de mudanças espalhadas.
 class Customer {
   constructor(
     private name: string,

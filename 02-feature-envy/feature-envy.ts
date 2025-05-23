@@ -1,3 +1,8 @@
+// CÓDIGO COM CODE SMELL: FEATURE ENVY
+// O método printCustomerDetails na classe InvoicePrinter está demonstrando "inveja" dos dados da classe Customer
+// Ele acessa diretamente várias propriedades do objeto Customer (name, address, city, zip)
+// Isso viola o princípio de encapsulamento, pois a lógica de formatação dos dados do cliente
+// deveria estar na própria classe Customer, que é a dona desses dados
 class Customer {
   constructor(
     public name: string,

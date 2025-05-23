@@ -1,3 +1,6 @@
+// CÓDIGO REFATORADO: REMOÇÃO DO MIDDLE MAN
+// Para resolver o problema, removemos a classe UserService, que era um "middle man" desnecessário.
+// Agora, CreateUserController chama diretamente UserRepository, simplificando a estrutura e reduzindo a complexidade.
 class CreateUserController {
   constructor(private userRepository: UserRepository) { }
 

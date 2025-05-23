@@ -1,3 +1,13 @@
+// CÓDIGO COM CODE SMELL: GOD CLASS
+// Uma God Class é uma classe que tem muitas responsabilidades e faz muitas coisas diferentes
+// Neste caso, a classe SystemManager está violando o princípio da Responsabilidade Única (SRP)
+// Ela está gerenciando:
+// 1. Conexão com banco de dados
+// 2. Autenticação de usuários
+// 3. Salvamento de dados
+// 4. Geração de relatórios
+// 5. Envio de emails
+// Isso torna a classe difícil de manter, testar e modificar
 class SystemManager {
   private dbConnection: any;
   private currentUser: string | null = null;

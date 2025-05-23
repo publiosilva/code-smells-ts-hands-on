@@ -1,3 +1,11 @@
+// CÓDIGO REFATORADO: REMOÇÃO DO LONG METHOD
+// Para resolver o problema do método longo, aplicamos a técnica de Extração de Método
+// Dividimos o método processOrder em vários métodos menores e mais específicos:
+// 1. validateItems: responsável apenas pela validação dos itens
+// 2. calculateTotal: responsável apenas pelo cálculo do total
+// 3. applyDiscount: responsável apenas pela aplicação de descontos
+// 4. checkForHighValueOrder: responsável apenas pela verificação de pedidos de alto valor
+// Esta refatoração torna o código mais legível, mais fácil de manter e mais fácil de testar
 class OrderProcessor {
   process(order: any): void {
     this.validateItems(order);

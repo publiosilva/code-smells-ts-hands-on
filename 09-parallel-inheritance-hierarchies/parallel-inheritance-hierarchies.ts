@@ -1,3 +1,7 @@
+// CÓDIGO COM CODE SMELL: PARALLEL INHERITANCE HIERARCHIES
+// O code smell Parallel Inheritance Hierarchies ocorre quando há duas hierarquias de classes que evoluem em paralelo.
+// Neste exemplo, temos ShapeRenderer e Shape, cada uma com suas subclasses (CircleRenderer, SquareRenderer, Circle, Square).
+// Isso dificulta a manutenção, pois mudanças em uma hierarquia exigem mudanças correspondentes na outra.
 abstract class ShapeRenderer {
   abstract render(): void;
 }

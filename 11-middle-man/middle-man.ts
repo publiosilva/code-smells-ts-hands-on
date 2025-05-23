@@ -1,3 +1,7 @@
+// CÓDIGO COM CODE SMELL: MIDDLE MAN
+// O code smell Middle Man ocorre quando uma classe apenas repassa chamadas para outra classe, sem adicionar valor.
+// Neste exemplo, a classe UserService apenas repassa a chamada de createUser para UserRepository,
+// sem adicionar lógica significativa, tornando-a um "middle man" desnecessário.
 class CreateUserController {
   constructor(private userService: UserService) { }
 

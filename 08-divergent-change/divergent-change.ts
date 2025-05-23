@@ -1,3 +1,7 @@
+// CÓDIGO COM CODE SMELL: DIVERGENT CHANGE
+// O code smell Divergent Change ocorre quando uma classe tem muitas responsabilidades diferentes.
+// Neste exemplo, a classe ProductManager lida com persistência, renderização e cálculo de frete.
+// Isso dificulta a manutenção, pois mudanças em uma responsabilidade podem afetar outras.
 class ProductManager {
   addProduct(product: Product): void {
     // logic to add product

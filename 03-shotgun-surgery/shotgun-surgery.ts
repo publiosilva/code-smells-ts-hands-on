@@ -1,3 +1,9 @@
+// CÓDIGO COM CODE SMELL: SHOTGUN SURGERY
+// O code smell Shotgun Surgery ocorre quando uma pequena mudança exige modificações em vários lugares do código.
+// Neste exemplo, se for necessário adicionar uma nova propriedade à classe Customer,
+// será preciso alterar também os métodos em CustomerService e CustomerComponent,
+// pois eles acessam diretamente as propriedades de Customer.
+// Isso aumenta o risco de erros e dificulta a manutenção.
 class Customer {
   constructor(
     public name: string,

@@ -1,3 +1,6 @@
+// CÓDIGO REFATORADO: REMOÇÃO DO COMMENTS
+// Para resolver o problema, extraímos cada condição para variáveis com nomes descritivos.
+// Agora, o código é autoexplicativo e não depende de comentários para ser entendido.
 type User = {
   id: number;
   role: string;

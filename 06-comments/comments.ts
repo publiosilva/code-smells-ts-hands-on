@@ -1,3 +1,7 @@
+// CÓDIGO COM CODE SMELL: COMMENTS
+// O code smell Comments ocorre quando o código depende de muitos comentários para explicar uma lógica complexa ou confusa.
+// Neste exemplo, há um bloco de comentários detalhando cada condição de acesso, pois o código não é autoexplicativo.
+// Isso indica que o código poderia ser melhorado para ser mais legível sem tantos comentários.
 type User = {
   id: number;
   role: string;

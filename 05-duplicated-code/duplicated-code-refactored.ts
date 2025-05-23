@@ -1,3 +1,6 @@
+// CÓDIGO REFATORADO: REMOÇÃO DO DUPLICATED CODE
+// Para resolver o problema de código duplicado, extraímos a lógica de validação de email para um método separado (isValidEmail).
+// Agora, a validação é feita de forma centralizada, facilitando a manutenção e evitando repetições.
 class SalesTaxCalculator {
   private taxRate: number;
 

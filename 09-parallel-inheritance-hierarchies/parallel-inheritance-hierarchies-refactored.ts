@@ -1,3 +1,7 @@
+// CÓDIGO REFATORADO: REMOÇÃO DO PARALLEL INHERITANCE HIERARCHIES
+// Para resolver o problema, unificamos as hierarquias em uma única classe Shape.
+// Agora, Circle e Square herdam diretamente de Shape, que inclui tanto getArea() quanto render().
+// Isso simplifica a manutenção, pois mudanças são feitas em um único lugar.
 abstract class Shape {
   abstract getArea(): number;
   

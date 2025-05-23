@@ -1,3 +1,7 @@
+// CÓDIGO COM CODE SMELL: DUPLICATED CODE
+// O code smell Duplicated Code ocorre quando há trechos de código repetidos.
+// Neste exemplo, a validação dos emails (email1 e email2) é feita de forma duplicada dentro do método sendTaxReport.
+// Isso dificulta a manutenção, pois qualquer alteração na lógica de validação precisa ser feita em todos os lugares duplicados.
 class SalesTaxCalculator {
   private taxRate: number;
 
